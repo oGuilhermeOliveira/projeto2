@@ -12,7 +12,7 @@ public class ClienteService implements IClienteService {
     private IClienteDAO clienteDAO;
 
     public ClienteService(IClienteDAO clienteDAO) {
-        this.clienteDAO = new ClienteDAO();
+        this.clienteDAO = clienteDAO;
     }
 
     @Override
@@ -22,6 +22,6 @@ public class ClienteService implements IClienteService {
 
     @Override
     public Cliente buscarPorCpf(Long cpf) {
-        return null;
+        return clienteDAO.buscarPorCpf(cpf);
     }
 }

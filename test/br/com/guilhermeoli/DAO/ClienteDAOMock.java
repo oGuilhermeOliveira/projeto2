@@ -5,7 +5,7 @@ import br.com.guilhermeoli.domain.Cliente;
 /**
  * @author guiol
  */
-public class ClienteDAO implements IClienteDAO {
+public class ClienteDAOMock implements IClienteDAO{
     @Override
     public void salvar(Cliente cliente) {
 
@@ -13,8 +13,8 @@ public class ClienteDAO implements IClienteDAO {
 
     @Override
     public Cliente buscarPorCpf(Long cpf) {
-        return null;
+        Cliente cliente = new Cliente();
+        cliente.setCpf(cpf);
+        return cliente;
     }
-
-
 }
